@@ -66,10 +66,41 @@ def t_page_alt_ord(dados, alfa = 0.05, uni_bi=2):
         print('é dicio')
         dados = pd.DataFrame(dados).T
     elif str(type(dados)) == "<class 'pandas.core.frame.DataFrame'>":
-        print('é panda')
+        pass
     else:
         print('Erro de formato da tabela, consulte a ajuda.')
 
+    N = dados.shape[0]
+    k = dados.shape[1]
+    somapostos =[]
+    tabela_postos = pd.DataFrame(dados.T.rank(method='max')).T
+    for i in (tabela_postos):
+        somapostos.append(tabela_postos.sum()[i])
+
+    if k > 4 and k < 10 and N <= 12:    #calculando z para amostras pequenas
+        tabela = 'p'
+    elif k == 3 and N <=20:
+        tabela = 'p'
+    else:
+        tabela = 'g'
+
+    if tabela == 'p':
+        L = 0
+        for i in range((len(somapostos))):
+            L += (somapostos[i]*(i+1))
+
+        z = tabelastoolkit.alfaconvert_nk(alfa, 'n', N, k)
+
+    else:
+        #calculando z para amostras grandes
+        uni_bi = 1
+        L = ((((12*L) - (3*N*k)*(k+1)**2) / (k*((k**1)-1))) * (math.sqrt((k-1)/N))).round(4)
+        z = tabelastoolkit.alfaconvert(alfa, 'a') * uni_bi
+
+    if L > z:
+        return (L, z, alfa, 'H1')
+    else:
+        return (L, z, alfa, 'H0')
 
 
 a = [[0,0,0],
@@ -98,4 +129,4 @@ b =  {"A": [0.797, 0.876, 0.888, 0.923, 0.942, 0.956],
 b = pd.DataFrame(b).T
 
 #print(t_cochran(a))
-print(t_page_alt_ord(b))
+#print(t_page_alt_ord(b, 0.01))

@@ -98,4 +98,20 @@ def alfaconvert(alfa, tabela):
             print('Alpha Error, escolha 0.20, 0.15,  0.10,  0.05 ou  0.01')
 
     else:
-        print('Tabela não inferiorormada, chame a função alfaconvert(alfa, tabela): ')
+        print('Tabela não informada, chame a função alfaconvert(alfa, tabela): ')
+
+def alfaconvert_nk(alfa, tabela, N=3, k=3):
+    tabela = str(tabela.upper())
+    if alfa == 0.05:
+        alfa = 0
+    elif alfa == 0.01:
+        alfa = 1
+    elif alfa == 0.001:
+        alfa = 2
+    else:
+        print('Alpha Error, escolha 0.05, 0.01 ou 0.001')
+
+    if tabela == 'N':
+        z = tabelas.n[k][N][alfa]
+    return z
+
