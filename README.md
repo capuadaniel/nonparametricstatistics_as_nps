@@ -9,8 +9,7 @@ Este repositório contém testes estatisticos não paramétricos
 | :rocket: URL         | no url
 | :fire: Desafio     | no url
 
-https://i.imgur.com/NQPYUIN.png#vitrinedev
-![](https://via.placeholder.com/1200x500.png?text=imagem+lindona+do+meu+projeto#vitrinedev)
+https://i.imgur.com/NQPYUIN.png #vitrinedev
 
 ## Detalhes do projeto
 
