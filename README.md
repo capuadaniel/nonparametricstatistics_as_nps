@@ -1,17 +1,24 @@
-# Nome do meu projeto
+# Estatística não parametrica as NPS
 
-Rápida descrição do objetivo de fazer esse projeto
+Este repositório contém testes estatisticos não paramétricos para seus projetos de analise de dados, até agora os testes funcionando são:
+- binomial
+- quiquadrado
+- kolmogorovsmirnov
+- inferencia de simetria
+- aleatoriedade da amostra
+- ponto mudança
+- cochran para amostras relacionadas
+- page para alternativas ordenadas
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
-| :sparkles: Nome        | **Titulo do meu projeto**
-| :label: Tecnologias | java, html, ruby, c# (tecnologias utilizadas)
-| :rocket: URL         | https://url-deploy.com.br
-| :fire: Desafio     | https://url-do-desafio.com.br
+| :sparkles: Nome        | **Estatistica não paramétrica**
+| :label: Tecnologias | python, pandas, numpy, scypy
+| :rocket: URL         | no url
+| :fire: Desafio     | no url
 
-<!-- Inserir imagem com a #vitrinedev ao final do link -->
+#vitrinedev
 ![](https://via.placeholder.com/1200x500.png?text=imagem+lindona+do+meu+projeto#vitrinedev)
 
 ## Detalhes do projeto
 
-Textos e imagens que descrevam seu projeto, suas conquistas, seus desafios, próximos passos, etc...
